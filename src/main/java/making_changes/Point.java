@@ -24,4 +24,12 @@ public class Point {
     public void setB(double b) {
         this.b = b;
     }
+
+    @Override
+    public String toString() {
+        return "Point{" +
+                "a=" + a +
+                ", b=" + b +
+                '}';
+    }
 }
