@@ -1,5 +1,8 @@
 package making_changes;
 
+import java.util.HashMap;
+import java.util.Objects;
+
 public class Point {
     private double a;
     private double b;
@@ -31,5 +34,22 @@ public class Point {
                 "a=" + a +
                 ", b=" + b +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Point point = (Point) o;
+        return Double.compare(getA(), point.getA()) == 0 && Double.compare(getB(), point.getB()) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getA(), getB());
     }
 }
